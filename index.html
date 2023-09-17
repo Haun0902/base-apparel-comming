@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-bottom: 0px;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .container {
+      width: 600px;
+      margin-left: 150px;
+      margin-top: 50px;
+
+    }
+
+
+
+    html {
+      position: relative;
+      background-color: antiquewhite;
+      height: 1000px;
+      width: 1440px;
+      margin: 0 auto;
+    }
+
+    .picture {
+
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      ;
+    }
+
+    h1 {
+
+      margin-top: 130px;
+      font-size: 85px;
+      padding-right: 161px;
+      color: hsl(0, 36%, 70%);
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 10px;
+    }
+
+    span {
+      color: black;
+      font-weight: 1000;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    h6 {
+      font-family: 'Josefin Sans', sans-serif;
+      color: hsl(0, 36%, 70%);
+      font-size: 16px;
+      letter-spacing: 0px;
+      padding-right: 161px;
+    line-height: 25px;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding-right: 180px;
+      background-color: hsl(54, 57%, 94%);
+      outline: 0.25px solid #afb5b9;
+
+    }
+
+    input[type="email"]:hover {
+      background-color: #f0f0f0;
+
+    }
+
+    button {
+      /* background-color: hsl(0, 36%, 70%);*/
+      background: linear-gradient(to bottom, #ff9900, #ffcc00);
+      border-radius: 30px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      margin-left: -56px;
+      padding-right: 30px;
+      padding-left: 30px;
+      font-size: 16px;
+      box-shadow: -5px 8px 14px 1px rgba(220, 125, 125, 0.6);
+      border: 0;
+      color: white;
+    }
+
+    .invalid {
+      display: none;
+      color: red;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+    }
+
+    svg {
+      display: none;
+    }
+
+    .input-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      right: 80px;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <img src="images/logo.svg" alt="logo">
+    </div>
+    <div>
+      <h1>WE'RE <span>COMING SOON</span> </h1>
+      <h6>Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.</h6>
+    </div>
+
+
+
+
+    <div class="picture"> <img src="images/hero-desktop.jpg" alt="hero-desktop"></div>
+    <div class="input-container">
+      <input placeholder="Email Adress" type="email" name="email" id="email" value="Email">
+      <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <g fill="none" fill-rule="evenodd">
+          <circle cx="12" cy="12" r="12" fill="#F96464" />
+          <path fill="#FFF" fill-rule="nonzero"
+            d="M13.256 6v9.056h-2V6h2zm-.944 12.464c-.384 0-.699-.104-.944-.312a1.027 1.027 0 0 1-.368-.824c0-.33.125-.608.376-.832.25-.224.563-.336.936-.336.373 0 .68.112.92.336.24.224.36.501.36.832 0 .341-.117.616-.352.824-.235.208-.544.312-.928.312z" />
+        </g>
+      </svg>
+      <button onclick="fillEmail()">></button>
+    </div>
+
+    <p class="invalid">Please provide a valid email!!</p>
+
+  </div>
+  <script>
+    function fillEmail() {
+      // Get a reference to the email input field
+      var emailInput = document.getElementById("email");
+
+      // Set the value of the input field to your desired email
+      if (emailInput.value != 1) {
+        var hiddenElement = document.querySelector('.invalid');
+        hiddenElement.style.display = 'block'; // 
+        var hiddenElement1 = document.querySelector("svg");
+        hiddenElement1.style.display = 'block';
+        var emailInput = document.querySelector('input[type="email"]');
+        emailInput.style.border = '1px solid red';
+        var buttonColour = document.querySelector('button');
+        buttonColour.style.backgroundColor = 'pink';
+        buttonColour.style.color = 'white';
+      }
+      emailInput.value = "example@email.com";
+      emailInput.value = '';
+
+    }
+  </script>
+  <!--  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Hau Nguyen</a>.
+    </p>
+  </footer> -->
+</body>
+
+</html>
